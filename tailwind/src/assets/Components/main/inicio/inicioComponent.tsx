@@ -1,46 +1,34 @@
-// src/components/InicioComponent.jsx
 import MenuComponent from "./menu/menuComponent";
 
-function InicioComponent() {
+export default function InicioComponent() {
   return (
-    <div id="inicio" className="w-full h-screen flex box-border">
-      {/* INFO (metade esquerda) */}
+    <div id="inicio" className="w-full flex-1 flex flex-col md:flex-row box-border">
       <div
         id="info"
-        className="relative group w-1/2 h-full bg-center bg-cover flex items-center justify-center transition-all duration-300"
-        style={{
-          backgroundImage: "url('/img/info.avif')",
-        }}
+        className="
+          relative group w-full md:w-1/2 flex items-center justify-center
+          bg-center bg-cover min-h-[50vh] md:min-h-0
+          transition-all duration-300
+        "
+        style={{ backgroundImage: "url('/info.avif')" }}
       >
-        {/* overlay gradient que muda de opacidade no hover */}
-        <div
-          className="
-            absolute inset-0 
-            bg-gradient-to-b from-transparent to-black 
-            opacity-70 group-hover:opacity-100 
-            transition-opacity duration-200
-          "
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
 
-        {/* conteúdo do texto — posicionado por margin-top e responsivo */}
         <h1
           className="
-            relative z-10 w-[85%] text-[3vw] text-[#f0f0f0] 
-            mt-[60vh] ml-[8%] text-center 
-            transition-all duration-200 ease-in-out
-            group-hover:mt-[50vh] group-hover:scale-110
+            relative z-10 w-[90%] max-w-[900px] text-[6vw] md:text-[3.2vw] lg:text-[2.6vw]
+            text-[#f0f0f0] text-center
+            py-12 md:py-0
+            transition-all duration-200 ease-in-out group-hover:scale-105
           "
         >
           Bem-vindo ao Guia HC, onde você aprenderá como usar o aplicativo hospital das clínicas
         </h1>
       </div>
 
-      {/* MenuComponent (metade direita) */}
-      <div className="w-1/2 h-full">
+      <div className="w-full md:w-1/2 h-auto md:h-full flex items-center justify-center">
         <MenuComponent />
       </div>
     </div>
   );
 }
-
-export default InicioComponent;

@@ -1,6 +1,6 @@
 function MenuNavComponent() {
     return (
-        <nav className="flex bg-[#007694] justify-center h-[30px] w-full max-w-full">
+        <nav className="flex bg-[#007694] justify-center h-[30px] w-full max-w-full z-10">
             <ul className="flex list-none self-center max-w-full">
                 <li tabIndex={1} className="text-[17px]">
                     <a 
