@@ -1,4 +1,3 @@
-// src/pages/Faq/Faq.tsx
 import React, { useState, useEffect } from "react";
 import CardsLayout from "../../assets/Components/layouts/LayoutCards"
 

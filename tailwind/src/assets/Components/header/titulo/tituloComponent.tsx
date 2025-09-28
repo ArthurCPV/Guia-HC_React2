@@ -1,4 +1,3 @@
-// tituloComponent.jsx
 function TituloComponent() {
   return (
     <h1 id="titulo" className="text-white text-[28px] md:text-[48px] lg:text-[70px] font-light text-center">

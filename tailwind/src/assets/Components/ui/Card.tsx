@@ -1,25 +1,22 @@
-// src/components/ui/Card.tsx
+// Card.tsx
 import React from "react";
 
-type Props = {
+type CardProps = {
   title: string;
-  subtitle?: string;
-  image?: string;
-  onClick?: () => void;
-  children?: React.ReactNode;
+  subtitle: string;
+  image: string;
+  onClick?: () => void | Promise<void>;
+  // add other props if needed
 };
 
-export default function Card({ title, subtitle, image, onClick, children }: Props) {
+const Card: React.FC<CardProps> = ({ title, subtitle, image, onClick }) => {
   return (
-    <article
-      className="bg-[#121212] rounded-lg border border-gray-800 p-4 cursor-pointer hover:scale-[1.03] transition-transform"
-      onClick={onClick}
-      role={onClick ? "button" : undefined}
-    >
-      {image && <img src={image} alt={title} className="w-full h-40 object-cover rounded-md mb-3" />}
-      <h3 className="text-lg font-semibold text-white">{title}</h3>
-      {subtitle && <p className="text-sm text-gray-300">{subtitle}</p>}
-      {children}
-    </article>
+    <div onClick={onClick} style={{ cursor: onClick ? "pointer" : "default" }}>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{subtitle}</p>
+    </div>
   );
-}
+};
+
+export default Card;

@@ -1,4 +1,3 @@
-// src/assets/Components/main/mainComponent.tsx
 import React from "react";
 
 type Props = { children?: React.ReactNode };

@@ -1,7 +1,7 @@
 // src/pages/Integrantes/Integrantes.tsx
 import React, { useEffect, useState } from "react";
-import CardsLayout from "../../assets/Components/layouts/LayoutCards";
-import Card from "../../assets/Components//ui/Card";
+import CardsLayout from "../../assets/Components/layouts/LayoutCards.tsx";
+import Card from "../../assets/Components//ui/Card.tsx";
 import { useNavigate } from "react-router-dom";
 
 type Member = { id: string; name: string; role: string; avatar?: string };
@@ -25,7 +25,7 @@ export default function Integrantes() {
           key={m.id}
           title={m.name}
           subtitle={m.role}
-          image={m.avatar}
+          image={m.avatar ?? "/default-avatar.png"}
           onClick={() => navigate(`/integrante/${m.id}`)} // exemplo de navegar pra detalhe (rota dinâmica opcional)
         />
       ))}
