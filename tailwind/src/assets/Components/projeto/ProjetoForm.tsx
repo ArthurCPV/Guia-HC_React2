@@ -3,13 +3,13 @@ import InputCampo from "../contato/InputCampo"
 
 export default function ProjetoForm() {
   return (
-    <div id="container-projeto" className="w-full flex justify-center items-center mt-24 pb-8 px-4">
-      <form id="formularioProjeto" method="GET" className="w-full max-w-4xl flex justify-center">
+    <div id="container-projeto" className="w-full flex justify-center items-center mt-20 pb-8 px-4">
+      <form id="formularioProjeto" method="GET" className="w-full max-w-3xl flex justify-center">
         <fieldset className="w-full bg-[#353751]/50 border-4 border-[#0011ff]/90 rounded-2xl p-6 flex flex-col gap-4">
           {/* legend posicionado */}
           <legend className="sr-only">Cadastro</legend>
 
-          <h2 className="text-white text-2xl md:text-3xl font-medium mb-2">Cadastro</h2>
+          <h2 className="text-white text-2xl text-center md:text-3xl font-medium mb-2">Cadastro</h2>
 
           <div id="nome-form-projeto" className="formrow">
             <InputCampo
@@ -17,7 +17,7 @@ export default function ProjetoForm() {
               label="Nome Completo:"
               placeholder="Digite seu nome"
               tabIndex={1}
-              inputClassName="w-full md:w-[90%] bg-[#f5f5f593] placeholder-black border-b-2 border-[#0011ff]/90"
+              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
             />
           </div>
 
@@ -28,7 +28,7 @@ export default function ProjetoForm() {
               type="email"
               placeholder="Digite seu Email"
               tabIndex={2}
-              inputClassName="w-full md:w-[90%] bg-[#f5f5f593] placeholder-black border-b-2 border-[#0011ff]/90"
+              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
             />
           </div>
 
@@ -39,7 +39,7 @@ export default function ProjetoForm() {
               type="email"
               placeholder="Confirme seu Email"
               tabIndex={3}
-              inputClassName="w-full md:w-[90%] bg-[#f5f5f593] placeholder-black border-b-2 border-[#0011ff]/90"
+              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
             />
           </div>
 
@@ -50,7 +50,7 @@ export default function ProjetoForm() {
               type="tel"
               placeholder="(12) 12345-6789"
               tabIndex={4}
-              inputClassName="w-full md:w-[90%] bg-[#f5f5f593] placeholder-black border-b-2 border-[#0011ff]/90"
+              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
             />
           </div>
 
@@ -83,7 +83,7 @@ export default function ProjetoForm() {
               type="password"
               placeholder="Digite sua senha"
               tabIndex={6}
-              inputClassName="w-full md:w-[90%] bg-[#f5f5f593] placeholder-black border-b-2 border-[#0011ff]/90"
+              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
             />
           </div>
 
@@ -94,11 +94,11 @@ export default function ProjetoForm() {
               type="password"
               placeholder="Confirme sua senha"
               tabIndex={7}
-              inputClassName="w-full md:w-[90%] bg-[#f5f5f593] placeholder-black border-b-2 border-[#0011ff]/90"
+              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
             />
           </div>
 
-          <div className="flex justify-end pt-2">
+          <div className="flex justify-end pt-4">
             <button
               className="button-projeto w-[120px] h-[40px] bg-gray-300 text-black border-2 border-black rounded hover:bg-[#00cbf4] transition"
               type="submit"
