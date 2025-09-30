@@ -1,4 +1,4 @@
-// src/pages/Integrantes/IntegrantesList.tsx
+
 import React, { useEffect, useState } from "react";
 import IntegranteCard from "./IntegranteCard";
 
@@ -12,9 +12,7 @@ export type Member = {
   avatar?: string;
 };
 
-const STORAGE_KEY = "guiahc_members_v1";
-
-const FALLBACK: Member[] = [
+const DEFAULT_MEMBERS: Member[] = [
   {
     id: "m-arthur",
     name: "Arthur Cabral",
@@ -24,10 +22,28 @@ const FALLBACK: Member[] = [
     github: "https://github.com/ArthurCPV",
     avatar: "/img/Arthur.png",
   },
+  {
+    id: "m-vitor",
+    name: "Vitor Dalmagro",
+    turma: "1TDSA",
+    rm: "566052",
+    linkedin: "https://www.linkedin.com/in/vitor-dalmagro-b75722366/",
+    github: "https://github.com/VitorDalmagro",
+    avatar: "/img/Vitor.jpg",
+  },
 ];
 
+const STORAGE_KEY = "guiahc_members_v1";
+
 export default function IntegrantesList() {
-  const [members, setMembers] = useState<Member[]>([]);
+  const [members, setMembers] = useState<Member[]>(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? (JSON.parse(raw) as Member[]) : DEFAULT_MEMBERS;
+    } catch {
+      return DEFAULT_MEMBERS;
+    }
+  });
 
   // campos do formulário
   const [name, setName] = useState("");
@@ -37,35 +53,6 @@ export default function IntegrantesList() {
   const [github, setGithub] = useState("");
   const [avatar, setAvatar] = useState("");
 
-  // Carregamento inicial: localStorage -> fetch -> fallback
-  useEffect(() => {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      try {
-        setMembers(JSON.parse(raw) as Member[]);
-        return;
-      } catch {
-        // ignore parse error
-      }
-    }
-
-    let mounted = true;
-    (async () => {
-      try {
-        const res = await fetch("/data/members.json");
-        if (!res.ok) throw new Error("fetch fail");
-        const data = (await res.json()) as Member[];
-        if (mounted) setMembers(data);
-      } catch {
-        if (mounted) setMembers(FALLBACK);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
-  // Persiste quando members muda
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(members));
@@ -90,12 +77,7 @@ export default function IntegrantesList() {
       avatar: avatar.trim() || undefined,
     };
     setMembers((p) => [newM, ...p]);
-    setName("");
-    setTurma("");
-    setRm("");
-    setLinkedin("");
-    setGithub("");
-    setAvatar("");
+    setName(""); setTurma(""); setRm(""); setLinkedin(""); setGithub(""); setAvatar("");
   };
 
   const removeMember = (id: string) => {
@@ -104,15 +86,16 @@ export default function IntegrantesList() {
   };
 
   return (
-    <section className="w-full flex flex-col items-center px-4 py-8">
+    <section className="w-full flex flex-col items-center px-4">
       <div className="w-full max-w-[1200px]">
         <header className="flex justify-center mb-6">
           <h1 className="text-4xl md:text-5xl text-white underline decoration-[#3f0684] mb-8">Integrantes</h1>
         </header>
 
+        {/* área com borda e fundo parecido com original */}
         <div className="mx-auto w-[90%] bg-white/8 border-[5px] border-white/80 rounded-[40px] p-6 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {members.map((m) => (
+            {members.map(m => (
               <div key={m.id} className="flex justify-center">
                 <IntegranteCard
                   id={m.id}
@@ -126,10 +109,10 @@ export default function IntegrantesList() {
                 />
               </div>
             ))}
-            {members.length === 0 && <p className="text-white">Nenhum integrante encontrado.</p>}
           </div>
         </div>
 
+        {/* formulário rápido para adicionar */}
         <form onSubmit={addMember} className="mx-auto w-[90%] max-w-3xl bg-black/30 p-4 rounded-lg border border-gray-700">
           <h3 className="text-white mb-2">Adicionar integrante</h3>
           <div className="flex flex-col md:flex-row gap-3">
@@ -140,7 +123,7 @@ export default function IntegrantesList() {
           <div className="flex flex-col md:flex-row gap-3 mt-3">
             <input className="flex-1 px-3 py-2 rounded bg-gray-100" placeholder="LinkedIn (url)" value={linkedin} onChange={(e) => setLinkedin(e.target.value)} />
             <input className="flex-1 px-3 py-2 rounded bg-gray-100" placeholder="GitHub (url)" value={github} onChange={(e) => setGithub(e.target.value)} />
-            <input className="flex-1 px-3 py-2 rounded bg-gray-100" placeholder="Avatar (url ou /img/...)" value={avatar} onChange={(e) => setAvatar(e.target.value)} />
+            <input className="flex-1 px-3 py-2 rounded bg-gray-100" placeholder="Avatar (url / /img/...)" value={avatar} onChange={(e) => setAvatar(e.target.value)} />
           </div>
           <div className="flex justify-end mt-3">
             <button className="px-4 py-2 bg-emerald-500 text-white rounded" type="submit">Adicionar</button>

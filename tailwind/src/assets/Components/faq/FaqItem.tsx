@@ -18,7 +18,7 @@ export default function FaqItem({ id, pergunta, resposta, isOpen, onToggle, alin
       : "md:ml-auto md:pr-4 md:justify-end";
 
   return (
-    <div className={`w-full md:w-1/2 flex ${wrapperAlignment} mb-6`}>
+    <div className={`w-full md:w-1/2 flex ${wrapperAlignment} mb-[16.7px]`}>
       <div className="w-full max-w-[500px]">
 
         {/* Pergunta */}
