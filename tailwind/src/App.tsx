@@ -2,7 +2,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import './index.css';
 
 import HeaderComponent from './assets/Components/header/headerComponent';
-import MenuNavComponent from './assets/Components/menuNav/menuNavComponent';
 import MainComponent from './assets/Components/main/mainComponent';
 import FooterComponent from './assets/Components/footer/footerComponent';
 
@@ -17,7 +16,6 @@ export default function App() {
   return (
     <div>
       <HeaderComponent />
-      <MenuNavComponent />
       <MainComponent>
         <Routes>
           <Route path="/" element={<Home />} />

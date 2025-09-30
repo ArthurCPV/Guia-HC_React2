@@ -27,7 +27,7 @@ const DEFAULT_MEMBERS: Member[] = [
     name: "Vitor Dalmagro",
     turma: "1TDSA",
     rm: "566052",
-    linkedin: "https://www.linkedin.com/in/vitor-dalmagro-b75722366/",
+    linkedin: "https://www.linkedin.com/in/vitor-fria-dalmagro-474524379",
     github: "https://github.com/VitorDalmagro",
     avatar: "/img/Vitor.jpg",
   },

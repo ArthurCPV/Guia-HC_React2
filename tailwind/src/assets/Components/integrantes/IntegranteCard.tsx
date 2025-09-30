@@ -30,7 +30,7 @@ export default function IntegranteCard({
       {/* imagem quadrada com cantos grandes */}
       <div className="guiahc-avatar w-[290px] h-[290px] overflow-hidden rounded-[24px] border-[5px] border-black bg-gray-800 flex items-center justify-center">
         {avatar ? (
-          // eslint-disable-next-line @next/next/no-img-element
+          // eslint-disable-next-line@next/next/no-img-element
           <img src={avatar} alt={name} className="w-full h-full object-cover" />
         ) : (
           <span className="text-6xl text-white/90">{name?.charAt(0)?.toUpperCase() ?? "?"}</span>

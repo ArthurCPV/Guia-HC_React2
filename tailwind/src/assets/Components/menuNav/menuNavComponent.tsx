@@ -1,37 +1,36 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-function MenuNavComponent() {
-  return (
-    <nav className="flex bg-[#007694] justify-center h-[30px] w-full max-w-full z-10">
-      <ul className="flex list-none self-center max-w-full">
-        <li tabIndex={1} className="text-[17px]">
-          <Link to="/" className="no-underline text-[#e4e4e4] ml-[10px] transition-colors duration-500 hover:text-[#0CE899]">
-            MENU
-          </Link>
-        </li>
-        <li tabIndex={2} className="text-[17px]">
-          <Link to="/integrantes" className="no-underline text-[#e4e4e4] ml-[10px] transition-colors duration-500 hover:text-[#0CE899]">
-            INTEGRANTES
-          </Link>
-        </li>
-        <li tabIndex={3} className="text-[17px]">
-          <Link to="/projeto" className="no-underline text-[#e4e4e4] ml-[10px] transition-colors duration-500 hover:text-[#0CE899]">
-            PROJETO
-          </Link>
-        </li>
-        <li tabIndex={4} className="text-[17px]">
-          <Link to="/faq" className="no-underline text-[#e4e4e4] ml-[10px] transition-colors duration-500 hover:text-[#0CE899]">
-            FAQ
-          </Link>
-        </li>
-        <li tabIndex={5} className="text-[17px]">
-          <Link to="/contato" className="no-underline text-[#e4e4e4] ml-[10px] transition-colors duration-500 hover:text-[#0CE899]">
-            CONTATO
-          </Link>
-        </li>
+type Props = {
+  desktopMode?: boolean; // quando true renderiza horizont. (md+)
+  mobileMode?: boolean;  // quando true renderiza vertical para overlay
+  onClickLink?: () => void; // opcional: fechar menu ao clicar no link (mobile)
+};
+
+export default function MenuNavComponent({ desktopMode, mobileMode, onClickLink }: Props) {
+  const baseLinkClass = "text-white no-underline px-3 py-2 hover:underline";
+
+  if (desktopMode) {
+    // horizontais para header desktop
+    return (
+      <ul className="flex gap-6 items-center text-sm">
+        <li><Link to="/" className={baseLinkClass}>MENU</Link></li>
+        <li><Link to="/integrantes" className={baseLinkClass}>INTEGRANTES</Link></li>
+        <li><Link to="/projeto" className={baseLinkClass}>PROJETO</Link></li>
+        <li><Link to="/faq" className={baseLinkClass}>FAQ</Link></li>
+        <li><Link to="/contato" className={baseLinkClass}>CONTATO</Link></li>
       </ul>
-    </nav>
+    );
+  }
+
+  // vertical para mobile overlay (ou fallback)
+  return (
+    <ul className={`flex flex-col ${mobileMode ? "gap-6" : "gap-4"} mt-4`}>
+      <li><Link to="/" onClick={onClickLink} className="text-white text-lg">MENU</Link></li>
+      <li><Link to="/integrantes" onClick={onClickLink} className="text-white text-lg">INTEGRANTES</Link></li>
+      <li><Link to="/projeto" onClick={onClickLink} className="text-white text-lg">PROJETO</Link></li>
+      <li><Link to="/faq" onClick={onClickLink} className="text-white text-lg">FAQ</Link></li>
+      <li><Link to="/contato" onClick={onClickLink} className="text-white text-lg">CONTATO</Link></li>
+    </ul>
   );
 }
-
-export default MenuNavComponent;
