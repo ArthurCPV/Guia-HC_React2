@@ -1,5 +1,4 @@
 import LogoComponent from "./logo/logoComponent";
-import MenuCoresComponent from "./menuCores/menuCoresComponent";
 import MenuToggleComponent from "./menuToggle/menuToggleComponent";
 import TituloComponent from "./titulo/tituloComponent";
 
@@ -11,7 +10,6 @@ function HeaderComponent() {
         <TituloComponent />
       </div>
       <div className="flex items-center gap-4 pt-3">
-        <MenuCoresComponent />
         <MenuToggleComponent />
       </div>
     </header>

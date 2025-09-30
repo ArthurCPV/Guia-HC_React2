@@ -1,0 +1,42 @@
+[
+  {
+    "id": "q1",
+    "pergunta": "O que é o Guia HC?",
+    "resposta":
+      "O Guia HC é uma ferramenta criada com o intuito de ajudar os pacientes do Hospital das Clínicas no acesso das funções fornecidas pelo hospital.",
+    "alinhamento": "left"
+  },
+    {
+    "id": "q2",
+    "pergunta": "Onde posso acessar ...?",
+    "resposta": "Você pode acessar o portal do paciente do Hospital das Clínicas clicando no link abaixo.",
+    "link": { "url": "https://portaldopaciente.hc.fm.usp.br/", "text": "Portal do paciente" },
+    "alinhamento": "right"
+    },
+  {
+    "id": "q3",
+    "pergunta": "Como o Guia HC ajuda?",
+    "resposta":
+      "O Guia HC ajuda no apoio de criação de cadastros de usuários para o aplicativo do paciente do Hospital das Clínicas, mostrando dados pendentes e orientando o usuário.",
+    "alinhamento": "left"
+  },
+  {
+    "id": "q4",
+    "pergunta": "Quem são os responsáveis do Guia HC?",
+    "resposta":
+      "Somos estudantes da FIAP — Faculdade de Informática e Administração Paulista. Para saber mais, acesse a aba Integrantes.",
+    "alinhamento": "right"
+  },
+  {
+    "id": "q5",
+    "pergunta": "Como posso ver o projeto de vocês?",
+    "resposta": "Você pode acessar o projeto pela aba 'PROJETO'.",
+    "alinhamento": "left"
+  },
+    {
+    "id": "q6",
+    "pergunta": "Como posso entrar em contato com vocês?",
+    "resposta": "Você pode entrar em contato conosco pela aba 'CONTATO'.",
+    "alinhamento": "right"
+  }
+]

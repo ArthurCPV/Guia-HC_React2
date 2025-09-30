@@ -1,0 +1,20 @@
+[
+  {
+    "id": "m-arthur",
+    "name": "Arthur Cabral",
+    "turma": "1TDSA",
+    "rm": "566515",
+    "linkedin": "https://www.linkedin.com/in/arthur-cabral2101/",
+    "github": "https://github.com/ArthurCPV",
+    "avatar": "/img/Arthur.png"
+  },
+  {
+    "id": "m-vitor",
+    "name": "Vitor Dalmagro",
+    "turma": "1TDSA",
+    "rm": "566052",
+    "linkedin": "https://www.linkedin.com/in/vitor-dalmagro-b75722366/",
+    "github": "https://github.com/VitorDalmagro",
+    "avatar": "/img/Vitor.jpg"
+  }
+]

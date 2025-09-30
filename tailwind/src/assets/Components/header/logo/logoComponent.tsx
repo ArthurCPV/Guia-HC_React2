@@ -1,6 +1,6 @@
 function LogoComponent() {
   return (
-    <div id="logo" className="ml-[6%] mr-[2%] flex-none">
+    <div id="logo" className="ml-[2%] mr-[2%] flex-none">
       <a href="#">
         <img
           src="/img/LogoGuiaHC.png"

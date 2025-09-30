@@ -3,9 +3,9 @@ import InputCampo from "../contato/InputCampo"
 
 export default function ProjetoForm() {
   return (
-    <div id="container-projeto" className="w-full flex justify-center items-center mt-20 pb-8 px-4">
+    <div id="container-projeto" className="w-full flex justify-center items-center py-6 pb-8 px-4">
       <form id="formularioProjeto" method="GET" className="w-full max-w-3xl flex justify-center">
-        <fieldset className="w-full bg-[#353751]/50 border-4 border-[#0011ff]/90 rounded-2xl p-6 flex flex-col gap-4">
+        <fieldset className="w-[500px] bg-[#353751]/50 border-4 border-[#0011ff]/90 rounded-2xl p-6 flex flex-col gap-4">
           {/* legend posicionado */}
           <legend className="sr-only">Cadastro</legend>
 
@@ -55,10 +55,10 @@ export default function ProjetoForm() {
           </div>
 
           {/* gênero (radio group) */}
-          <div id="sexo-form-projeto" className="formrow flex flex-col md:flex-row md:items-center gap-3">
+          <div id="sexo-form-projeto" className="formrow flex flex-col md:flex-row md:items-center gap-4">
             <label className="text-white pr-2">Escolha o seu Gênero:</label>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <label className="inline-flex items-center gap-2 text-white">
                 <input type="radio" name="escolhasexo" value="masculino" className="genRadio accent-[#0011ff]" tabIndex={5} />
                 Masculino

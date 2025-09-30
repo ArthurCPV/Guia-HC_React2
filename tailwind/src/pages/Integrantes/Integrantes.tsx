@@ -1,34 +1,10 @@
-// src/pages/Integrantes/Integrantes.tsx
-import React, { useEffect, useState } from "react";
-import CardsLayout from "../../assets/Components/layouts/LayoutCards.tsx";
-import Card from "../../assets/Components//ui/Card.tsx";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import IntegrantesList from "../../assets/Components/integrantes/IntegrantesLists";
 
-type Member = { id: string; name: string; role: string; avatar?: string };
-
-export default function Integrantes() {
-  const [members, setMembers] = useState<Member[]>([]);
-  useEffect(() => {
-    // simples fetch local
-    fetch("/data/integrantes.json")
-      .then(res => res.json())
-      .then((data: Member[]) => setMembers(data))
-      .catch(() => setMembers([]));
-  }, []);
-
-  const navigate = useNavigate();
-
+export default function IntegrantesPage() {
   return (
-    <CardsLayout title="Integrantes">
-      {members.map(m => (
-        <Card
-          key={m.id}
-          title={m.name}
-          subtitle={m.role}
-          image={m.avatar ?? "/default-avatar.png"}
-          onClick={() => navigate(`/integrante/${m.id}`)} // exemplo de navegar pra detalhe (rota dinâmica opcional)
-        />
-      ))}
-    </CardsLayout>
+    <main className="min-h-screen flex flex-col items-center py-12">
+      <IntegrantesList />
+    </main>
   );
 }
