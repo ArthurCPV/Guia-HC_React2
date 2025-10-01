@@ -1,56 +1,114 @@
 import React from "react";
-import InputCampo from "../contato/InputCampo"
+import { useForm } from "react-hook-form";
+
+type FormValues = {
+  nome: string;
+  email: string;
+  emailConfirmacao: string;
+  telefone?: string;
+  escolhasexo?: "masculino" | "feminino" | "outros";
+  senha: string;
+  senhaConfirmacao: string;
+};
 
 export default function ProjetoForm() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>();
+
+  const watchEmail = watch("email");
+  const watchSenha = watch("senha");
+
+  const hasSurname = (v: string) => v.trim().split(/\s+/).length >= 2;
+
+  const onSubmit = (data: FormValues) => {
+    // ação após validação (no momento apenas exibe e reseta)
+    // Você pode substituir por fetch/POST se desejar
+    alert("Inscrição enviada com sucesso!");
+    console.log("Projeto submission:", data);
+    reset();
+  };
+
+  /* --- Mantive exatamente as classes/estrutura do seu formulário original ---
+     - Inputs usam as mesmas classes que você forneceu em inputClassName
+     - Legend, titles e botão idênticos
+  */
   return (
     <div id="container-projeto" className="w-full flex justify-center items-center py-6 pb-8 px-4">
-      <form id="formularioProjeto" method="GET" className="w-full max-w-3xl flex justify-center">
+      <form
+        id="formularioProjeto"
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full max-w-3xl flex justify-center"
+      >
         <fieldset className="w-[500px] bg-[#353751]/50 border-4 border-[#0011ff]/90 rounded-2xl p-6 flex flex-col gap-4">
-          {/* legend posicionado */}
           <legend className="sr-only">Cadastro</legend>
 
           <h2 className="text-white text-2xl text-center md:text-3xl font-medium mb-2">Cadastro</h2>
 
+          {/* Nome */}
           <div id="nome-form-projeto" className="formrow">
-            <InputCampo
+            <label htmlFor="nome-projeto" className="text-white block mb-1">Nome Completo:</label>
+            <input
               id="nome-projeto"
-              label="Nome Completo:"
+              {...register("nome", {
+                required: "Insira seu nome",
+                validate: (v) => hasSurname(v) || "Adicione um sobrenome",
+              })}
               placeholder="Digite seu nome"
               tabIndex={1}
-              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
+              className="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800 mt-2 px-2 py-2"
             />
+            {errors.nome && <p className="text-red-400 text-sm mt-1">{String(errors.nome.message)}</p>}
           </div>
 
+          {/* Email */}
           <div id="email-form-projeto" className="formrow">
-            <InputCampo
+            <label htmlFor="email-projeto" className="text-white block mb-1">Email:</label>
+            <input
               id="email-projeto"
-              label="Email:"
               type="email"
+              {...register("email", {
+                required: "Insira seu email",
+                pattern: { value: /^\S+@\S+\.\S+$/, message: "Email inválido" },
+              })}
               placeholder="Digite seu Email"
               tabIndex={2}
-              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
+              className="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800 mt-2 px-2 py-2"
             />
+            {errors.email && <p className="text-red-400 text-sm mt-1">{String(errors.email.message)}</p>}
           </div>
 
+          {/* Email confirmação */}
           <div id="email-confirmacao-form-projeto" className="formrow">
-            <InputCampo
+            <label htmlFor="email-confirmacao-projeto" className="text-white block mb-1">Confirme seu Email:</label>
+            <input
               id="email-confirmacao-projeto"
-              label="Confirme seu Email:"
               type="email"
+              {...register("emailConfirmacao", {
+                required: "Confirme seu email",
+                validate: (v) => v === (watchEmail ?? "") || "Os emails não estão iguais",
+              })}
               placeholder="Confirme seu Email"
               tabIndex={3}
-              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
+              className="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800 mt-2 px-2 py-2"
             />
+            {errors.emailConfirmacao && <p className="text-red-400 text-sm mt-1">{String(errors.emailConfirmacao.message)}</p>}
           </div>
 
+          {/* Telefone */}
           <div id="telefone-form-projeto" className="formrow">
-            <InputCampo
+            <label htmlFor="telefone-projeto" className="text-white block mb-1">Telefone:</label>
+            <input
               id="telefone-projeto"
-              label="Telefone:"
               type="tel"
+              {...register("telefone")}
               placeholder="(12) 12345-6789"
               tabIndex={4}
-              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
+              className="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800 mt-2 px-2 py-2"
             />
           </div>
 
@@ -60,42 +118,71 @@ export default function ProjetoForm() {
 
             <div className="flex items-center gap-2">
               <label className="inline-flex items-center gap-2 text-white">
-                <input type="radio" name="escolhasexo" value="masculino" className="genRadio accent-[#0011ff]" tabIndex={5} />
+                <input
+                  {...register("escolhasexo", { required: "Selecione seu gênero" })}
+                  type="radio"
+                  value="masculino"
+                  className="genRadio accent-[#0011ff]"
+                  tabIndex={5}
+                />
                 Masculino
               </label>
 
               <label className="inline-flex items-center gap-2 text-white">
-                <input type="radio" name="escolhasexo" value="feminino" className="genRadio accent-[#0011ff]" />
+                <input
+                  {...register("escolhasexo", { required: "Selecione seu gênero" })}
+                  type="radio"
+                  value="feminino"
+                  className="genRadio accent-[#0011ff]"
+                />
                 Feminino
               </label>
 
               <label className="inline-flex items-center gap-2 text-white">
-                <input type="radio" name="escolhasexo" value="outros" className="genRadio accent-[#0011ff]" />
+                <input
+                  {...register("escolhasexo", { required: "Selecione seu gênero" })}
+                  type="radio"
+                  value="outros"
+                  className="genRadio accent-[#0011ff]"
+                />
                 Outros
               </label>
             </div>
           </div>
+          {errors.escolhasexo && <p className="text-red-400 text-sm mt-1 px-1">{String(errors.escolhasexo.message)}</p>}
 
+          {/* Senha */}
           <div id="senha-form-projeto" className="formrow">
-            <InputCampo
+            <label htmlFor="senha-projeto" className="text-white block mb-1">Senha:</label>
+            <input
               id="senha-projeto"
-              label="Senha:"
               type="password"
+              {...register("senha", {
+                required: "Insira sua senha",
+                minLength: { value: 6, message: "Senha mínima 6 caracteres" },
+              })}
               placeholder="Digite sua senha"
               tabIndex={6}
-              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
+              className="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800 mt-2 px-2 py-2"
             />
+            {errors.senha && <p className="text-red-400 text-sm mt-1">{String(errors.senha.message)}</p>}
           </div>
 
+          {/* Senha confirmação */}
           <div id="senha-confirmacao-form-projeto" className="formrow">
-            <InputCampo
+            <label htmlFor="senha-confirmacao-projeto" className="text-white block mb-1">Confirme a Senha:</label>
+            <input
               id="senha-confirmacao-projeto"
-              label="Confirme a Senha:"
               type="password"
+              {...register("senhaConfirmacao", {
+                required: "Confirme sua senha",
+                validate: (v) => v === (watchSenha ?? "") || "As senhas não estão iguais",
+              })}
               placeholder="Confirme sua senha"
               tabIndex={7}
-              inputClassName="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800"
+              className="w-full md:w-[90%] bg-white placeholder-black border-b-2 border-[#0011ff]/90 focus:outline-blue-800 mt-2 px-2 py-2"
             />
+            {errors.senhaConfirmacao && <p className="text-red-400 text-sm mt-1">{String(errors.senhaConfirmacao.message)}</p>}
           </div>
 
           <div className="flex justify-end pt-4">
@@ -104,6 +191,7 @@ export default function ProjetoForm() {
               type="submit"
               aria-label="Enviar inscrição do projeto"
               tabIndex={8}
+              disabled={isSubmitting}
             >
               Enviar
             </button>

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import IntegranteCard from "./IntegranteCard";
 
@@ -77,7 +76,12 @@ export default function IntegrantesList() {
       avatar: avatar.trim() || undefined,
     };
     setMembers((p) => [newM, ...p]);
-    setName(""); setTurma(""); setRm(""); setLinkedin(""); setGithub(""); setAvatar("");
+    setName("");
+    setTurma("");
+    setRm("");
+    setLinkedin("");
+    setGithub("");
+    setAvatar("");
   };
 
   const removeMember = (id: string) => {
@@ -92,9 +96,9 @@ export default function IntegrantesList() {
           <h1 className="text-4xl md:text-5xl text-white underline decoration-[#3f0684] mb-8">Integrantes</h1>
         </header>
 
-        {/* área com borda e fundo parecido com original */}
-        <div className="mx-auto w-[90%] bg-white/8 border-[5px] border-white/80 rounded-[40px] p-6 mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* card container: responsive grid 1 / 2 / 3 */}
+        <div className="mx-auto w-[95%] md:w-[90%] bg-white/8 border-[5px] border-white/80 rounded-[40px] p-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {members.map(m => (
               <div key={m.id} className="flex justify-center">
                 <IntegranteCard
@@ -113,7 +117,7 @@ export default function IntegrantesList() {
         </div>
 
         {/* formulário rápido para adicionar */}
-        <form onSubmit={addMember} className="mx-auto w-[90%] max-w-3xl bg-black/30 p-4 rounded-lg border border-gray-700">
+        <form onSubmit={addMember} className="mx-auto w-[95%] md:w-[90%] max-w-3xl bg-black/30 p-4 rounded-lg border border-gray-700">
           <h3 className="text-white mb-2">Adicionar integrante</h3>
           <div className="flex flex-col md:flex-row gap-3">
             <input className="flex-1 px-3 py-2 rounded bg-gray-100" placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} />
