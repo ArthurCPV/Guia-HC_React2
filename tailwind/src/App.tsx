@@ -7,6 +7,7 @@ import FooterComponent from './assets/Components/footer/footerComponent';
 
 import Home from './pages/Home/Home';
 import Integrantes from './pages/Integrantes/Integrantes';
+import IntegranteDetail from './assets/Components/integrantes/IntegranteDetail';
 import Projeto from './pages/Projeto/Projeto';
 import Faq from './pages/Faq/Faq';
 import Contato from './pages/Contato/Contato';
@@ -14,12 +15,13 @@ import NotFound from './pages/NotFound/NotFound';
 
 export default function App() {
   return (
-    <div>
+    <div id="container-geral" className="min-h-screen w-full flex flex-col bg-[#1f1d1d]">
       <HeaderComponent />
       <MainComponent>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/integrantes" element={<Integrantes />} />
+          <Route path="/integrantes/:id" element={<IntegranteDetail />} />
           <Route path="/projeto" element={<Projeto />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contato" element={<Contato />} />

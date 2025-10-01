@@ -1,3 +1,4 @@
+// src/components/Contato/ContatoForm.tsx
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -21,12 +22,11 @@ export default function ContatoForm() {
   const hasSurname = (v: string) => v.trim().split(/\s+/).length >= 2;
 
   const onSubmit = async (data: FormValues) => {
-    // aqui poderia chamar uma API, mas por enquanto só loga no console
     console.log("Contato enviado:", data);
     alert("Mensagem enviada com sucesso!");
     reset();
-    // exemplo: redirecionar pra home
-    // navigate("/");
+    // Se quiser redirecionar para a home depois do envio:
+    navigate("/");
   };
 
   return (
@@ -50,7 +50,7 @@ export default function ContatoForm() {
               placeholder="Digite seu nome"
               className="mt-2 w-[440px] mx-auto bg-gray-100/80 placeholder-black border-2 border-yellow-400/100 rounded px-3 py-2"
             />
-            {errors.nome && <p className="text-red-400 text-sm mt-1 px-2">{errors.nome.message}</p>}
+            {errors.nome && <p className="text-red-400 text-sm mt-1 px-2">{String(errors.nome.message)}</p>}
           </div>
 
           {/* Email */}
@@ -63,7 +63,7 @@ export default function ContatoForm() {
               placeholder="Digite seu Email"
               className="mt-2 w-[440px] mx-auto bg-gray-100/80 placeholder-black border-2 border-yellow-400/100 rounded px-3 py-2"
             />
-            {errors.email && <p className="text-red-400 text-sm mt-1 px-2">{errors.email.message}</p>}
+            {errors.email && <p className="text-red-400 text-sm mt-1 px-2">{String(errors.email.message)}</p>}
           </div>
 
           {/* Assunto */}
@@ -87,7 +87,7 @@ export default function ContatoForm() {
               placeholder="Deixe sua mensagem"
               className="mt-2 w-[440px] mx-auto bg-gray-100/80 placeholder-black border-2 border-yellow-400/100 rounded resize-none text-black px-3 py-2 focus:outline-[5px] focus:outline-yellow-400"
             />
-            {errors.mensagem && <p className="text-red-400 text-sm mt-1 px-2">{errors.mensagem.message}</p>}
+            {errors.mensagem && <p className="text-red-400 text-sm mt-1 px-2">{String(errors.mensagem.message)}</p>}
           </div>
 
           {/* Botão */}

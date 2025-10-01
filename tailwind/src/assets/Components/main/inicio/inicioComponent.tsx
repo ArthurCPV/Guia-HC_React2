@@ -2,7 +2,7 @@ import MenuComponent from "./menu/menuComponent";
 
 export default function InicioComponent() {
   return (
-    <div id="inicio" className="w-full flex-1 flex flex-col md:flex-row box-border">
+    <div id="inicio" className="w-full flex-1 flex flex-col md:flex-row box-border min-h-[calc(100vh-120px)]">
       <div
         id="info"
         className="relative group w-full md:w-1/2 flex items-center justify-center bg-center bg-cover min-h-[60vh] md:min-h-[80vh] transition-all duration-300"

@@ -76,12 +76,7 @@ export default function IntegrantesList() {
       avatar: avatar.trim() || undefined,
     };
     setMembers((p) => [newM, ...p]);
-    setName("");
-    setTurma("");
-    setRm("");
-    setLinkedin("");
-    setGithub("");
-    setAvatar("");
+    setName(""); setTurma(""); setRm(""); setLinkedin(""); setGithub(""); setAvatar("");
   };
 
   const removeMember = (id: string) => {
@@ -98,7 +93,8 @@ export default function IntegrantesList() {
 
         {/* card container: responsive grid 1 / 2 / 3 */}
         <div className="mx-auto w-[95%] md:w-[90%] bg-white/8 border-[5px] border-white/80 rounded-[40px] p-6 mb-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {/* IMPORTANT: use 1 / 2 / 3 columns at md / lg to avoid super estreito em tamanhos médios */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {members.map(m => (
               <div key={m.id} className="flex justify-center">
                 <IntegranteCard

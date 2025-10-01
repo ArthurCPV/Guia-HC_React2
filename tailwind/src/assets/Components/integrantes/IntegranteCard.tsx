@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   id: string;
@@ -21,14 +22,27 @@ export default function IntegranteCard({
   avatar,
   onRemove,
 }: Props) {
+  const navigate = useNavigate();
   return (
     <article
+      onClick={(e) => {
+        // se o clique veio do botão remover não navegar
+        const el = e.target as HTMLElement;
+        if (el.closest("button")) return;
+        navigate(`/integrantes/${id}`);
+      }}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === "Enter") navigate(`/integrantes/${id}`); }}
       className="guiahc-integrante w-full max-w-[340px] sm:max-w-[300px] md:max-w-[320px] flex flex-col items-center text-center bg-[#3f0684] rounded-[40px] border-[5px] border-black p-4"
       aria-labelledby={`name-${id}`}
     >
-      {/* avatar responsivo: small on mobile, large on desktop */}
-      <div className="guiahc-avatar overflow-hidden rounded-[24px] border-[5px] border-black bg-gray-800 flex items-center justify-center
-                      w-40 h-40 sm:w-56 sm:h-56 md:w-[290px] md:h-[290px]">
+      {/* avatar responsivo: usa max-width + aspect-square para nunca estourar o card */}
+      <div
+        className="guiahc-avatar w-full max-w-[290px] sm:max-w-[240px] md:max-w-[290px]
+                   aspect-square overflow-hidden rounded-[24px] border-[5px] border-black bg-gray-800
+                   flex items-center justify-center"
+      >
         {avatar ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={avatar} alt={name} className="w-full h-full object-cover" />
@@ -75,6 +89,7 @@ export default function IntegranteCard({
       {onRemove && (
         <div className="mt-4">
           <button
+            type="button"
             onClick={() => onRemove(id)}
             className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500"
           >
