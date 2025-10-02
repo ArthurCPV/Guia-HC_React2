@@ -9,35 +9,86 @@ Nosso produto usará como base a pesquisa do Centro Regional de Estudos para o D
 
 
 
-Front-End-challenge1/  
-├── ProjetoFront/  
-│   ├── css/  
-│   │   ├── style.css  
-│   │   ├── styleExtraLarge.css  
-│   │   ├── styleExtraSmall.css  
-│   │   ├── styleLarge.css  
-│   │   ├── styleMedium.css  
-│   │   ├── styleSmall.css  
+tailwind/  
+│── .gitignore  
+│── README.md  
+│── eslint.config.js  
+│── index.html  
+│── package-lock.json  
+│── package.json  
+│── postcss.config.cjs  
+│── tailwind.config.cjs  
+│── tsconfig.app.json  
+│── tsconfig.json  
+│── tsconfig.node.json  
+│── vite.config.ts  
+│ 
+├── public/  
 │   ├── img/  
 │   │   ├── Arthur.png  
 │   │   ├── BrunoDias.png  
-│   │   ├── github.png    
-│   │   ├── info.avif  
-│   │   ├── linkedin.png  
 │   │   ├── LogoGuiaHC.png  
-│   │   └── Vitor.jpg  
-│   │─── js/             
-│   │   ├── script.js  
-│   │   ├── scriptFormulario.js  
-│   │   └── scriptProjeto.js  
-│   ├── contato.html  
-│   ├── faq.html  
-│   ├── index.html  
-│   ├── integrantes.html  
-│   └── projeto.html  
-.gitattributes  
-README.md  
-
+│   │   ├── Vitor.jpg  
+│   │   ├── github.png  
+│   │   ├── info.avif  
+│   │   └── linkedin.png  
+│   └── ui/  
+│       └── InputCampo.tsx  
+│  
+├── src/  
+│   ├── App.tsx  
+│   ├── index.css  
+│   ├── main.tsx  
+│   │  
+│   ├── assets/  
+│   │   └── Components/  
+│   │       ├── contato/  
+│   │       │   └── ContatoForm.tsx  
+│   │       ├── faq/  
+│   │       │   ├── FaqItem.tsx  
+│   │       │   └── FaqList.tsx  
+│   │       ├── footer/  
+│   │       │   ├── footerComponent.tsx  
+│   │       │   └── rodape/  
+│   │       │       └── rodapeComponent.tsx  
+│   │       ├── header/  
+│   │       │   ├── headerComponent.tsx  
+│   │       │   ├── logo/   
+│   │       │   │   └── logoComponent.tsx  
+│   │       │   ├── menuToggle/  
+│   │       │   │   └── menuToggleComponent.tsx  
+│   │       │   └── titulo/  
+│   │       │       └── tituloComponent.tsx  
+│   │       ├── integrantes/  
+│   │       │   ├── IntegranteCard.tsx  
+│   │       │   ├── IntegranteDetail.tsx  
+│   │       │   └── IntegrantesLists.tsx  
+│   │       ├── main/  
+│   │       │   ├── mainComponent.tsx  
+│   │       │   └── inicio/  
+│   │       │       ├── inicioComponent.tsx 
+│   │       │       └── menu/  
+│   │       │           ├── menuComponent.tsx  
+│   │       │           └── containerBotoes/  
+│   │       │               └── containeirBotoesComponent.tsx  
+│   │       ├── menuNav/  
+│   │       │   └── menuNavComponent.tsx  
+│   │       └── projeto/  
+│   │           └── ProjetoForm.tsx  
+│   │
+│   └── pages/  
+│       ├── Contato/  
+│       │   └── Contato.tsx  
+│       ├── Faq/  
+│       │   └── Faq.tsx  
+│       ├── Home/  
+│       │   └── Home.tsx  
+│       ├── Integrantes/  
+│       │   └── Integrantes.tsx  
+│       ├── NotFound/  
+│       │   └── NotFound.tsx  
+│       └── Projeto/  
+│           └── Projeto.tsx  
 
 
 
