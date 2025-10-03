@@ -128,3 +128,6 @@ tailwind/
 
 ## 📁 Acesso ao projeto
 Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/ArthurCPV/Guia-HC_React2).
+
+##  Vídeo Youtube
+Clique [aqui](https://youtu.be/Nzm3UieYOfc) para acessar o vídeo
