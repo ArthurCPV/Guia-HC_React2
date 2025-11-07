@@ -124,8 +124,7 @@ tailwind/
 |---------------------------|---------------------------------------------------------------------|----------|----|
 | Arhtur dos Santos Cabral    |  [ArthurCPV](https://github.com/ArthurCPV)                                                                     |    [Arthur LinkedIn](https://www.linkedin.com/in/arthur-cabral2101/)      | RM566515 |
 | Vitor Fria Dalmagro                   | [VitorDalmagro](https://github.com/VitorDalmagro)                                                                     |  [Vitor LinkedIn](https://www.linkedin.com/in/vitor-fria-dalmagro-474524379)        | RM566052 |
-| Gabriel Cedraz                   | [GabrielCedraz](https://github.com/austrolopithecus)                                                                     |  [Gabriel LinkedIn](https://www.linkedin.com/in/gabriel-cedraz-9b971a354
-)        | RM565911 |
+| Gabriel Cedraz                   | [GabrielCedraz](https://github.com/austrolopithecus)                                                                     |  [Gabriel LinkedIn](https://www.linkedin.com/in/gabriel-cedraz-9b971a354)        | RM565911 |
 
 
 ## 📁 Acesso ao projeto
