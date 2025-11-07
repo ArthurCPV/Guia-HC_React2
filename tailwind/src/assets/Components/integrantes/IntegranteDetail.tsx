@@ -31,6 +31,15 @@ const FALLBACK: Member[] = [
     github: "https://github.com/VitorDalmagro",
     avatar: "/img/Vitor.jpg",
   },
+    {
+    id: "m-gabriel",
+    name: "Gabriel Cedraz",
+    turma: "1TDSA",
+    rm: "565911",
+    linkedin: "https://www.linkedin.com/in/gabriel-cedraz-9b971a354",
+    github: "https://github.com/austrolopithecus",
+    avatar: "/img/Gabriel.jpg",
+  },
 ];
 
 export default function IntegranteDetail() {
