@@ -12,6 +12,7 @@ import Projeto from './pages/Projeto/Projeto';
 import Faq from './pages/Faq/Faq';
 import Contato from './pages/Contato/Contato';
 import NotFound from './pages/NotFound/NotFound';
+import Usuarios from './pages/Usuarios/Usuarios';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/projeto" element={<Projeto />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/guia/usuarios" element={<Usuarios />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
