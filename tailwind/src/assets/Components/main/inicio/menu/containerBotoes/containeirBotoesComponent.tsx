@@ -17,8 +17,9 @@ function ContainerBotoesComponent() {
     <section id="container-botoes" className="flex flex-col items-center w-full">
       <Link to="/integrantes" className={baseBtn} tabIndex={1}>INTEGRANTES</Link>
       <Link to="/projeto" className={baseBtn} tabIndex={2}>PROJETO</Link>
-      <Link to="/faq" className={baseBtn} tabIndex={3}>FAQ</Link>
-      <Link to="/contato" className={baseBtn} tabIndex={4}>CONTATO</Link>
+      <Link to="/simulador" className={baseBtn} tabIndex={3}>SIMULADOR</Link>
+      <Link to="/faq" className={baseBtn} tabIndex={4}>FAQ</Link>
+      <Link to="/contato" className={baseBtn} tabIndex={5}>CONTATO</Link>
     </section>
   );
 }

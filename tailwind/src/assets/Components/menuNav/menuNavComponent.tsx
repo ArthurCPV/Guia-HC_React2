@@ -17,6 +17,7 @@ export default function MenuNavComponent({ desktopMode, mobileMode, onClickLink 
         <li><Link to="/" className={baseLinkClass}>MENU</Link></li>
         <li><Link to="/integrantes" className={baseLinkClass}>INTEGRANTES</Link></li>
         <li><Link to="/projeto" className={baseLinkClass}>PROJETO</Link></li>
+        <li><Link to="/simulador" className={baseLinkClass}>SIMULADOR</Link></li>
         <li><Link to="/faq" className={baseLinkClass}>FAQ</Link></li>
         <li><Link to="/contato" className={baseLinkClass}>CONTATO</Link></li>
       </ul>
@@ -28,6 +29,7 @@ export default function MenuNavComponent({ desktopMode, mobileMode, onClickLink 
     <ul className={`flex flex-col ${mobileMode ? "gap-6" : "gap-4"} mt-4`}>
       <li><Link to="/" onClick={onClickLink} className="text-white text-lg">MENU</Link></li>
       <li><Link to="/integrantes" onClick={onClickLink} className="text-white text-lg">INTEGRANTES</Link></li>
+      <li><Link to="/simulador" onClick={onClickLink} className="text-white text-lg">SIMULADOR</Link></li>
       <li><Link to="/projeto" onClick={onClickLink} className="text-white text-lg">PROJETO</Link></li>
       <li><Link to="/faq" onClick={onClickLink} className="text-white text-lg">FAQ</Link></li>
       <li><Link to="/contato" onClick={onClickLink} className="text-white text-lg">CONTATO</Link></li>
