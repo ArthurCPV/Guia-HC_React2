@@ -4,6 +4,7 @@ import "./index.css";
 import HeaderComponent from "./assets/Components/header/headerComponent";
 import MainComponent from "./assets/Components/main/mainComponent";
 import FooterComponent from "./assets/Components/footer/footerComponent";
+import ErrorBoundary from './components/ErrorBoundary';
 
 import Home from "./pages/Home/Home";
 import Integrantes from "./pages/Integrantes/Integrantes";
@@ -34,7 +35,8 @@ export default function App() {
       <HeaderComponent />
 
       <MainComponent>
-        <Routes>
+        <ErrorBoundary>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/integrantes" element={<Integrantes />} />
           <Route path="/integrantes/:id" element={<IntegranteDetail />} />
@@ -45,7 +47,8 @@ export default function App() {
           <Route path="/guia/usuarios" element={<Usuarios />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
-        </Routes>
+          </Routes>
+        </ErrorBoundary>
       </MainComponent>
 
       <FooterComponent />

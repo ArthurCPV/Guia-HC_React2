@@ -131,7 +131,7 @@ export default function ProjetoForm() {
        <div className="fixed top-4 right-4">
          <a
            href="/guia/usuarios"
-           className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-lg"
+           className="inline-block bg-blue-600 text-white white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-lg"
          >
            Gerenciar Usuários
          </a>
