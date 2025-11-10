@@ -70,62 +70,62 @@ No final:
 
 
 
-tailwind/ 
-│ 
-├── public/ 
-│   ├── img/ 
-│   │   ├── Arthur.png 
-│   │   ├── BrunoDias.png 
-│   │   ├── Gabriel.jpg 
-│   │   ├── LogoGuiaHC.png 
-│   │   ├── github.png 
-│   │   ├── linkedin.png 
-│   │   └── info.avif 
-│   │
-│   └── ui/ 
-│ 
-└── src/ 
-    ├── assets/ 
-    │   └── Components/ 
-    │       ├── contato/ 
-    │       ├── faq/ 
-    │       ├── footer/ 
-    │       ├── header/ 
-    │       ├── integrantes/ 
-    │       ├── main/ 
-    │       ├── menuNav/ 
-    │       ├── projeto/ 
-    │       └── simulador/
-    │           ├── Animations/
-    │           │    ├── Checkmark.tsx
-    │           │    ├── Confetti.tsx
-    │           │    └── confetti.css
-    │           │
-    │           ├── SimForm.tsx 
-    │           ├── StepHint.tsx
-    │           ├── SuccessToast.tsx
-    │           ├── TutorialController.tsx
-    │           └── TutorialOverlay.tsx
-    │ 
-    ├── components/ 
-    ├── context/ 
-    ├── lib/
-    ├── tutorial/
-    │
-    ├── pages/
-    │   ├── Contato/
-    │   ├── Faq/
-    │   ├── Home/
-    │   ├── Integrantes/
-    │   ├── Login/
-    │   ├── NotFound/
-    │   ├── Projeto/
-    │   ├── Simulador/
-    │   └── Usuarios/
-    │
-    ├── App.tsx
-    ├── main.tsx
-    └── index.css
+tailwind/       
+│       
+├── public/      
+│   ├── img/        
+│   │   ├── Arthur.png      
+│   │   ├── BrunoDias.png       
+│   │   ├── Gabriel.jpg         
+│   │   ├── LogoGuiaHC.png      
+│   │   ├── github.png      
+│   │   ├── linkedin.png        
+│   │   └── info.avif       
+│   │       
+│   └── ui/         
+│       
+└── src/        
+    ├── assets/         
+    │   └── Components/         
+    │       ├── contato/        
+    │       ├── faq/        
+    │       ├── footer/         
+    │       ├── header/         
+    │       ├── integrantes/        
+    │       ├── main/       
+    │       ├── menuNav/        
+    │       ├── projeto/        
+    │       └── simulador/      
+    │           ├── Animations/     
+    │           │    ├── Checkmark.tsx      
+    │           │    ├── Confetti.tsx       
+    │           │    └── confetti.css       
+    │           │       
+    │           ├── SimForm.tsx         
+    │           ├── StepHint.tsx        
+    │           ├── SuccessToast.tsx        
+    │           ├── TutorialController.tsx      
+    │           └── TutorialOverlay.tsx     
+    │       
+    ├── components/         
+    ├── context/        
+    ├── lib/        
+    ├── tutorial/       
+    │       
+    ├── pages/      
+    │   ├── Contato/        
+    │   ├── Faq/        
+    │   ├── Home/       
+    │   ├── Integrantes/        
+    │   ├── Login/      
+    │   ├── NotFound/       
+    │   ├── Projeto/        
+    │   ├── Simulador/      
+    │   └── Usuarios/       
+    │       
+    ├── App.tsx     
+    ├── main.tsx        
+    └── index.css       
 
 
 
