@@ -70,61 +70,58 @@ No final:
 
 
 
-tailwind/   
-│   
-├── public/  
-│   └── img/   
-│       ├── Arthur.png     
-│       ├── BrunoDias.png   
-│       ├── Gabriel.jpg  
-│       ├── LogoGuiaHC.png    
-│       ├── github.png      
-│       ├── linkedin.png      
-│       └── info.avif      
-│
-└── src/
-    ├── assets/
-    │   └── Components/
-    │       ├── header/
-    │       ├── footer/
-    │       ├── contato/
-    │       ├── faq/
-    │       ├── integrantes/
-    │       ├── main/
-    │       ├── menuNav/
-    │       ├── simulador/
-    │       └── projeto/
-    │
-    ├── components/
-    ├── context/
+tailwind/ 
+│ 
+├── public/ 
+│   ├── img/ 
+│   │   ├── Arthur.png 
+│   │   ├── BrunoDias.png 
+│   │   ├── Gabriel.jpg 
+│   │   ├── LogoGuiaHC.png 
+│   │   ├── github.png 
+│   │   ├── linkedin.png 
+│   │   └── info.avif 
+│   │
+│   └── ui/ 
+│ 
+└── src/ 
+    ├── assets/ 
+    │   └── Components/ 
+    │       ├── contato/ 
+    │       ├── faq/ 
+    │       ├── footer/ 
+    │       ├── header/ 
+    │       ├── integrantes/ 
+    │       ├── main/ 
+    │       ├── menuNav/ 
+    │       ├── projeto/ 
+    │       └── simulador/
+    │           ├── Animations/
+    │           │    ├── Checkmark.tsx
+    │           │    ├── Confetti.tsx
+    │           │    └── confetti.css
+    │           │
+    │           ├── SimForm.tsx 
+    │           ├── StepHint.tsx
+    │           ├── SuccessToast.tsx
+    │           ├── TutorialController.tsx
+    │           └── TutorialOverlay.tsx
+    │ 
+    ├── components/ 
+    ├── context/ 
     ├── lib/
     ├── tutorial/
-    ├── simulador/
-    │   ├── Animations/
-    │   │   ├── Checkmark.tsx
-    │   │   ├── Confetti.tsx
-    │   │   └── confetti.css
-    │   ├── components/
-    │   │   ├── StepHint.tsx
-    │   │   ├── SuccessToast.tsx
-    │   │   └── TutorialOverlay.tsx
-    │   ├── context/
-    │   │   └── TutorialController.tsx
-    │   ├── tutorial/
-    │   │   └── steps.ts
-    │   └── SimForm.tsx
     │
     ├── pages/
+    │   ├── Contato/
+    │   ├── Faq/
     │   ├── Home/
-    │   ├── Projeto/
-    │   ├── Simulador/
     │   ├── Integrantes/
     │   ├── Login/
     │   ├── NotFound/
-    │   ├── Contato/
-    │   ├── Faq/
+    │   ├── Projeto/
+    │   ├── Simulador/
     │   └── Usuarios/
-    │       └── Usuarios.tsx
     │
     ├── App.tsx
     ├── main.tsx
