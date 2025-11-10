@@ -70,7 +70,7 @@ No final:
 
 
 
-GUAI-HC_REACT/
+tailwind/
 │
 ├── public/
 │   └── img/
@@ -91,8 +91,14 @@ GUAI-HC_REACT/
     │       ├── faq/
     │       ├── integrantes/
     │       ├── main/
+    │       ├── menuNav/
+    │       ├── simulador/
     │       └── projeto/
     │
+    ├── components/
+    ├── context/
+    ├── lib/
+    ├── tutorial/
     ├── simulador/
     │   ├── Animations/
     │   │   ├── Checkmark.tsx
@@ -112,6 +118,11 @@ GUAI-HC_REACT/
     │   ├── Home/
     │   ├── Projeto/
     │   ├── Simulador/
+    │   ├── Integrantes/
+    │   ├── Login/
+    │   ├── NotFound/
+    │   ├── Contato/
+    │   ├── Faq/
     │   └── Usuarios/
     │       └── Usuarios.tsx
     │
@@ -134,7 +145,7 @@ GUAI-HC_REACT/
 
 ### Bibliotecas  
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)  
-![React Hook Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=for-the-badg e&logo=reacthookform&logoColor=white)  
+![React HookForm](https://img.shields.io/badge/React_Hook_Form-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white)  
 
 ### Ferramentas e Padrões
 ![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)  
