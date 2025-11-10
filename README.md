@@ -1,94 +1,123 @@
+# 📱 Guia HC — Aplicação com Tutorial Assistido
 
-# Objetivo
+Aplicação desenvolvida com o objetivo de **ajudar idosos e pessoas com baixa familiaridade com tecnologia** a utilizarem um aplicativo real (Hospital das Clínicas).  
+Nosso foco é **ensinar fazendo**, por meio de um *tutorial interativo com destaque visual* nos campos.
 
- 
+---
 
-Nosso produto usará como base a pesquisa do Centro Regional de Estudos para o Desenvolvimento da Sociedade da Informação e os dados coletados da PNAD Contínua, com o público-alvo composto, em sua maioria por idosos. A solução abordará um aplicativo de apoio ao do hospital das clínicas, onde nele irá conter a interface do aplicativo original em conjunto com uma sobreposição de auxílio. A sobreposição possui o intuito de instigar a atenção do usuário e focar a atenção nele sobre um guia de suporte ao uso, explicando as funcionalidades do aplicativo e auxiliando para que o conhecimento do usuário sobre o uso do aplicativo hospital das clínicas seja amplificado. 
+## 🎯 Objetivo do Projeto
+
+O Guia HC simula o cadastro dentro do aplicativo do Hospital das Clínicas e:
+
+- Destaca automaticamente os campos que o usuário deve preencher.
+- Explica cada passo do formulário.
+- Possui preenchimento automático (animação escrevendo no campo).
+- Valida e envia os dados para uma **API Java (backend real)**.
+- Verifica a força da senha em tempo real usando **API Python**.
+
+O usuário aprende **fazendo**, com acessibilidade, foco visual e sem distrações.
+
+---
+
+## 🧠 Funcionalidades Principais
+
+| Funcionalidade | Descrição |
+|----------------|----------|
+| ✅ Tutorial interativo (cadastro assistido) | Guias que destacam campos e executam ações automaticamente. |
+| ✅ Autofill com animação de digitação | O assistente “digita sozinho” preenchendo o campo. |
+| ✅ Confirmação visual com confetti 🎉 | Exibido ao final do tutorial ou após cadastro manual. |
+| ✅ CRUD completo com API Java | Listagem, cadastro, edição e exclusão de usuários. |
+| ✅ Verificação de senha com API Python | Exibe relatório de segurança em tempo real. |
+| ✅ UX para idosos | Tela escura, letras grandes, foco visual e navegação guiada. |
+
+---
+
+## 🚀 Como usar o *Cadastro Assistido*
+
+1. Entre em **Simulação → Cadastro - Guia HC**
+2. Um pop-up perguntará: *"Deseja usar o tutorial?"*
+3. Escolha:
+   - **Sim** → o assistente começa o passo a passo
+   - **Não** → o usuário preenche manualmente
+
+Durante o tutorial:
+
+➡️ O campo atual fica **destacado e ampliado**  
+➡️ O botão “Executar Ação” **digita automaticamente** no campo  
+➡️ Após a digitação, o tutorial passa para o próximo passo sozinho
+
+No final:
+
+✨ aparece a animação de check + confetti  
+🚀 o usuário é redirecionado para a página inicial do guia
+
+---
+
+## 🗃 Integração com API
+
+### 🔵 Backend Java (CRUD de usuários)
+
+| Método | Rota | Ação |
+|--------|------|------|
+| `POST` | `/usuarios` | Cadastra usuário |
+| `GET` | `/usuarios` | Lista todos |
+| `GET` | `/usuarios/{id}` | Busca um específico |
+| `PUT` | `/usuarios/{id}` | Atualiza informações |
+| `DELETE` | `/usuarios/{id}` | Remove usuário |
+
 
 # Estrutura de pasta
 
 
 
-tailwind/  
-│── .gitignore  
-│── README.md  
-│── eslint.config.js  
-│── index.html  
-│── package-lock.json  
-│── package.json  
-│── postcss.config.cjs  
-│── tailwind.config.cjs  
-│── tsconfig.app.json  
-│── tsconfig.json  
-│── tsconfig.node.json  
-│── vite.config.ts  
-│ 
-├── public/  
-│   ├── img/  
-│   │   ├── Arthur.png  
-│   │   ├── BrunoDias.png  
-│   │   ├── LogoGuiaHC.png  
-│   │   ├── Vitor.jpg  
-│   │   ├── github.png  
-│   │   ├── info.avif  
-│   │   └── linkedin.png  
-│   └── ui/  
-│       └── InputCampo.tsx  
-│  
-├── src/  
-│   ├── App.tsx  
-│   ├── index.css  
-│   ├── main.tsx  
-│   │  
-│   ├── assets/  
-│   │   └── Components/  
-│   │       ├── contato/  
-│   │       │   └── ContatoForm.tsx  
-│   │       ├── faq/  
-│   │       │   ├── FaqItem.tsx  
-│   │       │   └── FaqList.tsx  
-│   │       ├── footer/  
-│   │       │   ├── footerComponent.tsx  
-│   │       │   └── rodape/  
-│   │       │       └── rodapeComponent.tsx  
-│   │       ├── header/  
-│   │       │   ├── headerComponent.tsx  
-│   │       │   ├── logo/   
-│   │       │   │   └── logoComponent.tsx  
-│   │       │   ├── menuToggle/  
-│   │       │   │   └── menuToggleComponent.tsx  
-│   │       │   └── titulo/  
-│   │       │       └── tituloComponent.tsx  
-│   │       ├── integrantes/  
-│   │       │   ├── IntegranteCard.tsx  
-│   │       │   ├── IntegranteDetail.tsx  
-│   │       │   └── IntegrantesLists.tsx  
-│   │       ├── main/  
-│   │       │   ├── mainComponent.tsx  
-│   │       │   └── inicio/  
-│   │       │       ├── inicioComponent.tsx 
-│   │       │       └── menu/  
-│   │       │           ├── menuComponent.tsx  
-│   │       │           └── containerBotoes/  
-│   │       │               └── containeirBotoesComponent.tsx  
-│   │       ├── menuNav/  
-│   │       │   └── menuNavComponent.tsx  
-│   │       └── projeto/  
-│   │           └── ProjetoForm.tsx  
-│   │
-│   └── pages/  
-│       ├── Contato/  
-│       │   └── Contato.tsx  
-│       ├── Faq/  
-│       │   └── Faq.tsx  
-│       ├── Home/  
-│       │   └── Home.tsx  
-│       ├── Integrantes/  
-│       │   └── Integrantes.tsx  
-│       ├── NotFound/  
-│       │   └── NotFound.tsx  
-│       └── Projeto/  
-│           └── Projeto.tsx  
+GUAI-HC_REACT/
+│
+├── public/
+│   └── img/
+│       ├── Arthur.png
+│       ├── BrunoDias.png
+│       ├── Gabriel.jpg
+│       ├── LogoGuiaHC.png
+│       ├── github.png
+│       ├── linkedin.png
+│       └── info.avif
+│
+└── src/
+    ├── assets/
+    │   └── Components/
+    │       ├── header/
+    │       ├── footer/
+    │       ├── contato/
+    │       ├── faq/
+    │       ├── integrantes/
+    │       ├── main/
+    │       └── projeto/
+    │
+    ├── simulador/
+    │   ├── Animations/
+    │   │   ├── Checkmark.tsx
+    │   │   ├── Confetti.tsx
+    │   │   └── confetti.css
+    │   ├── components/
+    │   │   ├── StepHint.tsx
+    │   │   ├── SuccessToast.tsx
+    │   │   └── TutorialOverlay.tsx
+    │   ├── context/
+    │   │   └── TutorialController.tsx
+    │   ├── tutorial/
+    │   │   └── steps.ts
+    │   └── SimForm.tsx
+    │
+    ├── pages/
+    │   ├── Home/
+    │   ├── Projeto/
+    │   ├── Simulador/
+    │   └── Usuarios/
+    │       └── Usuarios.tsx
+    │
+    ├── App.tsx
+    ├── main.tsx
+    └── index.css
 
 
 
@@ -105,7 +134,7 @@ tailwind/
 
 ### Bibliotecas  
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)  
-![React Hook Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white)  
+![React Hook Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=for-the-badg e&logo=reacthookform&logoColor=white)  
 
 ### Ferramentas e Padrões
 ![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)  
@@ -131,4 +160,4 @@ tailwind/
 Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/ArthurCPV/Guia-HC_React2).
 
 ##  Vídeo Youtube
-Clique [aqui](https://youtu.be/Nzm3UieYOfc) para acessar o vídeo
+Clique [aqui](https://youtu.be/8PGvLEvhsh0) para acessar o vídeo
