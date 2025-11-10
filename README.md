@@ -70,17 +70,17 @@ No final:
 
 
 
-tailwind/
-│
-├── public/
-│   └── img/
-│       ├── Arthur.png
-│       ├── BrunoDias.png
-│       ├── Gabriel.jpg
-│       ├── LogoGuiaHC.png
-│       ├── github.png
-│       ├── linkedin.png
-│       └── info.avif
+tailwind/   
+│   
+├── public/  
+│   └── img/   
+│       ├── Arthur.png     
+│       ├── BrunoDias.png   
+│       ├── Gabriel.jpg  
+│       ├── LogoGuiaHC.png    
+│       ├── github.png      
+│       ├── linkedin.png      
+│       └── info.avif      
 │
 └── src/
     ├── assets/
